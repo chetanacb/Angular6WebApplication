@@ -1,0 +1,14 @@
+<!--<app-search-countries ></app-search-countries>-->
+
+<div>
+  <input type="text" placeholder="Enter Country Name ..." style="width:300px;" [(ngModel)]="searchTerm" (keypress)="onCountrySelected($event.target.value)"/>
+  <br/>
+  Serached Country : {{searchTerm}}
+</div>
+<br/>
+<div *ngFor="let country of countryList">
+  <div (click)="onClick(country.name)" style="cursor:pointer">
+      <div>{{country.name}}</div>
+      <div><img src={{country.flag}} alt="Country Flag" width="100" height="100"></div>
+  </div>
+</div>
